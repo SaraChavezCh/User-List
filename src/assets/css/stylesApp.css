@@ -1,0 +1,78 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+  
+body{
+    height: 100vh;
+    background-image: url('../images/background.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.App{
+    margin: 0rem auto;
+}
+.app-t{
+    z-index: 1;
+    width: 100%;
+   display: block;
+   margin: 0rem auto 1rem;
+}
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.register-space{
+    width: 350px;
+    background-color: #26377653;
+    border-radius: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    line-height: 2rem;
+}
+label{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    padding: .5rem;
+}
+#birthday, input{
+    border-radius: .5rem;
+    border: none;
+    height: 1.5rem;
+}
+#email{
+    margin-right: -1.5rem;
+}
+input{
+    padding: 5px;
+}
+.inputContainer{
+    margin: 0 auto;
+}
+.button{
+    border-radius: 1rem;
+    background-color: #2637768f;
+    width: 50%;
+    height: 1.5rem;
+    border: none;
+    color:white;
+    font-weight: 700;
+   padding-bottom: 2rem;
+    
+}
+@media screen and (min-width: 1024px){
+    .button:hover{
+        color:#2637768f;
+        background-color:white ;
+    }
+}
