@@ -24,21 +24,49 @@
 }
 .user{
     width: 300px;
+    height: 390px;
     border: .2rem solid gray;
     list-style: none;
     background-color: rgba(119, 136, 153, 0.308);
     border-radius: 1rem;
+}
+.info{
+    margin: .5rem auto;
+    background-color: #2637765f;
+    width: 90%;
+    height: 2rem;
+    display: flex;
+    padding: 0rem 1rem 0 1rem;
+    line-height: 2rem;
+    border-radius: 1rem;
+    position: relative;
+}
+.password-visible{
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    margin-left: 3rem;
+    position: absolute;
+    right: 0.5rem;
+}
+.fa-eye-low-vision{
+    font-size: 16px;
+    color: #263776;
+
 }
 .user:hover{
     background-color: #26377653;
     border: .4rem   #263776 solid;
 }
 .email{
-    margin-top: .5rem;
     font-size: 14px;
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .delete, .edit{
-    margin: 1rem;
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
@@ -47,6 +75,7 @@
 .delete{
     color: red;
     z-index: 1;
+    margin-right: .5rem;
 }
 .edit{
     color: blue;
@@ -55,12 +84,13 @@
     width: 100px;
 }
 b{
-    font-size: 16px;
+    margin-right: .5rem;
+    font-size: 14px;
     font-style: italic;
-    font-weight: 400;
 }
 .user-name{
-    font-weight: 600;
+    text-align: center;
+    
 }
 
 @media screen and (min-width: 1024px){

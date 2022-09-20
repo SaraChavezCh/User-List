@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-function UserForm({ getUsers, selectedUSer, deselectUser }) {
+function UserForm({ getUsers, selectedUSer, deselectUser, setIsOpen, setIsEditOpen2}) {
   const { register, handleSubmit, reset } = useForm();
 
   useEffect(() => {
@@ -14,17 +14,21 @@ function UserForm({ getUsers, selectedUSer, deselectUser }) {
 
   const submit = (data) => {
     if (selectedUSer) {
-      //Updating user
+      //Edit user
       axios.put(`https://users-crud1.herokuapp.com/users/${selectedUSer.id}/`, data)
       .then(() => getUsers())
-        .catch((error) => console.log(error.response));
+      .catch((error) => console.log(error.response))
+       setIsEditOpen2(true);
+        
 
     } else {
-      //Creating user
+      //Create user
       axios
         .post(`https://users-crud1.herokuapp.com/users/`, data)
         .then(() => getUsers())
-        .catch((error) => console.log(error.response));
+        .catch((error) => console.log(error.response))
+        const modal= ()=>{setIsOpen(true)};
+        modal()
     }
     clear();
   };
@@ -39,9 +43,11 @@ function UserForm({ getUsers, selectedUSer, deselectUser }) {
     });
     deselectUser(null);
   };
+  
   return (
-    <form className="register-space" onSubmit={handleSubmit(submit)}>
-      <h className='title'>Users Register</h>
+    <form className="register-space"
+     onSubmit={handleSubmit(submit)}>
+      <h1 className='title'>Users Register</h1>
       <div className="inputContainer">
         <label htmlFor="email"> E-mail   </label>
         <input type="text" id="email" {...register("email")} />
@@ -62,7 +68,8 @@ function UserForm({ getUsers, selectedUSer, deselectUser }) {
         <label htmlFor="birthday">Birthday </label>
         <input type="date" id="birthday" {...register("birthday")} />
       </div>
-      <button className="button">{selectedUSer ? "Edit" : "Create"}</button>
+      <button
+      className="button">{selectedUSer ? "Edit" : "Create"}</button>
       <button className="button" type="button" onClick={clear}>
         Clear
       </button>

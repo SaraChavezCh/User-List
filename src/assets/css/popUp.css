@@ -1,0 +1,45 @@
+.pop{
+    background-color: white;
+    border-radius: 1rem;
+    width: 150px;
+    height: 150px;
+    margin: 25rem auto;
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+.popUp-Container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(119, 136, 153, 0.402);
+}
+
+.checked{}
+
+.fa-circle-check{
+    color:green;
+}
+
+.message{}
+
+.close-modal{
+    background:none;
+    border:none;
+}
+.fa-circle-exclamation{
+    color: red;
+}
+.fa-xmark{
+    font-size: 18px;
+}
+.delete-modal{
+    width: 3rem;
+    height: 2rem;
+    background-color: rgba(255, 0, 0, 0.886);
+    color: white;
+    border: 1px gray solid;
+    border-radius: .5rem;
+}
